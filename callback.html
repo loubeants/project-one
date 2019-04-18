@@ -24,7 +24,12 @@
       console.log("UNEXPECTED ERROR: No `access_token` in url params");
     } else {
       sessionStorage.setItem('accessToken', result.access_token);
-      window.location.replace('/artists');
+
+      var baseUrl = "";
+      if (!window.location.origin.match(/localhost/)) {
+        baseUrl = "/project-one";
+      }
+      window.location.replace(baseUrl + '/artists');
     }
   </script>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <!-- Link to Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
-   <!-- Link to Materialize Icons -->
+    <!-- Link to Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,13 @@
 
 <body>
 
-        <div>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo center">GrooveMe</a>
-                </div>
-            </nav>
-        </div>
+    <div>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">GrooveMe</a>
+            </div>
+        </nav>
+    </div>
 
     <div class="container">
         <div class="row block">
@@ -37,16 +37,16 @@
                 <div class="card green accent-3">
                     <div class="card-content white-text">
                         <span class="card-title">
-                            
+
                             <h1 class="black-text center">
                                 Link up your Spotify account to get groovin'!
                             </h1>
                             <div class="row">
                                 <!-- Button to authorize Spotify account. -->
                                 <div class="card-action center">
-                                    <a href="https://accounts.spotify.com/authorize?client_id=425ee334c96f4b839be025d690f42961&response_type=token&redirect_uri=http://localhost:8080/callback&scope=user-follow-read" 
+                                    <a id="spotify-login" href="#"
                                         class="grey darken-3 waves-effect waves-light btn-floating btn-large pulse">
-                                            <i class="large material-icons white-text">add</i>
+                                        <i class="large material-icons white-text">add</i>
                                     </a>
                                 </div>
                             </div>
@@ -56,14 +56,24 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <!-- jQuery link -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
     <!-- Javascript link -->
     <script type="text/javascript" src="project.js"></script>
 
+    <script>
+        var originUrl = window.location.origin;
+        if (!originUrl.match(/localhost/)) {
+            originUrl += "/project-one";
+        }
+
+        $("#spotify-login").attr("href", "https://accounts.spotify.com/authorize?client_id=425ee334c96f4b839be025d690f42961&response_type=token&redirect_uri=" + originUrl + "/callback&scope=user-follow-read");
+    </script>
 </body>
+
 </html>
