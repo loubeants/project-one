@@ -67,8 +67,9 @@ function searchTicketmaster(city) {
 
           var artist = response._embedded.events[i].name;
 
-          var pTwo = $("<p>").text("Tour: " + artist);
-
+          var pTwo = $("<a>").text("Tour: " + artist).attr("href",response._embedded.events[i].url);
+            pTwo.attr("target", "_blank");
+            
           eventDiv.append(pTwo);
 
           var venue = response._embedded.events[i]._embedded.venues[0].name;
