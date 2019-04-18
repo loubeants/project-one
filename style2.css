@@ -41,3 +41,6 @@ img {
     height: 20rem;
     overflow-y: scroll;
 }
+#city-input {
+    color: white;
+}
