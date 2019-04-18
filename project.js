@@ -78,7 +78,7 @@ function searchTicketmaster(city) {
           eventDiv.append(pThree);
 
 
-          $("#city-div").append(eventDiv);
+          $("#concert-list").append(eventDiv);
 
         }
 
