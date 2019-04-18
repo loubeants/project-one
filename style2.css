@@ -1,5 +1,4 @@
 /* Style for second page */
-
 nav {
     position: fixed;
     background: rgba(0, 0, 0, 0.2);
@@ -39,6 +38,6 @@ img {
 
 .answer {
     margin: 5px;
-    height: 7rem;
+    height: 20rem;
+    overflow-y: scroll;
 }
-
